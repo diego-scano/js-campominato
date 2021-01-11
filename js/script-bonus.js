@@ -1,9 +1,28 @@
-var difficulty = prompt('Scegli la difficoltà:  1. Facile  2. Normale  3. Difficile');
-
 function randomNumber(min, max) {
   var result = Math.floor(Math.random() * (max + 1 - min) + min);
   return result;
 }
+
+function userNumberCheck(userChoice, min, max) {
+  var check = false;
+  if (userChoice < min || userChoice > max || isNaN(userChoice)) {
+    check = true;
+  }
+  return check;
+}
+
+function bombsCheck(list, number) {
+  var find = false;
+  for (var i = 0; i < list.length; i++) {
+    if (list[i] === number) {
+      find = true;
+    }
+  }
+  return find;
+}
+
+
+var difficulty = prompt('Scegli la difficoltà:  1. Facile  2. Normale  3. Difficile');
 
 if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
   alert('Scegli la difficoltà inserendo esclusivamente 1, 2 o 3');
@@ -31,24 +50,6 @@ while (bombNumbers.length < maxBombs) {
   if(!bombNumbers.includes(replyNum)) {
     bombNumbers.push(replyNum);
   }
-}
-
-function userNumberCheck(userChoice, min, max) {
-  var check = false;
-  if (userChoice < min || userChoice > max || isNaN(userChoice)) {
-    check = true;
-  }
-  return check;
-}
-
-function bombsCheck(list, number) {
-  var find = false;
-  for (var i = 0; i < list.length; i++) {
-    if (list[i] === number) {
-      find = true;
-    }
-  }
-  return find;
 }
 
 console.log(bombNumbers);

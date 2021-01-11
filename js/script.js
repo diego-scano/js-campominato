@@ -1,17 +1,6 @@
-var bombNumbers = [];
-var userNumbers;
-var userArray = [];
-
 function randomNumber(min, max) {
   var result = Math.floor(Math.random() * (max + 1 - min) + min);
   return result;
-}
-
-while (bombNumbers.length < 16) {
-  var replyNum = randomNumber(1, 100);
-  if(!bombNumbers.includes(replyNum)) {
-    bombNumbers.push(replyNum)
-  }
 }
 
 function userNumberCheck(userChoice, min, max) {
@@ -30,6 +19,18 @@ function bombsCheck(list, number) {
     }
   }
   return find;
+}
+
+
+var bombNumbers = [];
+var userNumbers;
+var userArray = [];
+
+while (bombNumbers.length < 16) {
+  var replyNum = randomNumber(1, 100);
+  if(!bombNumbers.includes(replyNum)) {
+    bombNumbers.push(replyNum)
+  }
 }
 
 console.log(bombNumbers);
