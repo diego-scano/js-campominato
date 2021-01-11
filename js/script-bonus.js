@@ -10,15 +10,12 @@ if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
 } else {
   switch(difficulty) {
     case 1:
-      var replyNum = randomNumber(1, 100);
       var maxRange = 100;
       break;
     case 2:
-      var replyNum = randomNumber(1, 80);
       var maxRange = 80;
       break;
     case 3:
-      var replyNum = randomNumber(1, 50);
       var maxRange = 50;
       break;
   }
@@ -30,6 +27,7 @@ var userNumbers;
 var userArray = [];
 
 while (bombNumbers.length < maxBombs) {
+  var replyNum = randomNumber(1, maxRange);
   if(!bombNumbers.includes(replyNum)) {
     bombNumbers.push(replyNum);
   }
