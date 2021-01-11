@@ -69,7 +69,7 @@ while (!bombsCheck(bombNumbers, userNumbers) && y < (maxRange - maxBombs)) {
     if (bombsCheck(bombNumbers, userNumbers)) {
       alert('Hai beccato la bomba!');
     } else {
-      if (userArray.length === maxRange) {
+      if (userArray.length === (maxRange - maxBombs)) {
         alert('Hai vinto!')
       }
     }
