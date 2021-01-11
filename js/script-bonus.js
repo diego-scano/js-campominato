@@ -24,9 +24,6 @@ function bombsCheck(list, number) {
 
 var difficulty = prompt('Scegli la difficoltà:  1. Facile  2. Normale  3. Difficile');
 
-if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
-  alert('Scegli la difficoltà inserendo esclusivamente 1, 2 o 3');
-} else {
   switch(difficulty) {
     case '1':
       var maxRange = 100;
@@ -37,8 +34,9 @@ if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
     case '3':
       var maxRange = 50;
       break;
+    default:
+      alert('Scegli la difficoltà inserendo esclusivamente 1, 2 o 3');
   }
-}
 
 var bombNumbers = [];
 var maxBombs = 16;
