@@ -9,13 +9,13 @@ if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
   alert('Scegli la difficoltà inserendo esclusivamente 1, 2 o 3');
 } else {
   switch(difficulty) {
-    case 1:
+    case '1':
       var maxRange = 100;
       break;
-    case 2:
+    case '2':
       var maxRange = 80;
       break;
-    case 3:
+    case '3':
       var maxRange = 50;
       break;
   }
