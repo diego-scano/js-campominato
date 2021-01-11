@@ -9,19 +9,16 @@ if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
   alert('Scegli la difficoltà inserendo esclusivamente 1, 2 o 3');
 } else {
   switch(difficulty) {
-    case '1':
+    case 1:
       var replyNum = randomNumber(1, 100);
-      var attempts = 84;
       var maxRange = 100;
       break;
-    case '2':
+    case 2:
       var replyNum = randomNumber(1, 80);
-      var attempts = 64;
       var maxRange = 80;
       break;
-    case '3':
+    case 3:
       var replyNum = randomNumber(1, 50);
-      var attempts = 34;
       var maxRange = 50;
       break;
   }
