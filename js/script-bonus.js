@@ -28,12 +28,13 @@ if(difficulty < 1 || difficulty > 3 || isNaN(difficulty)) {
 }
 
 var bombNumbers = [];
+var maxBombs = 16;
 var userNumbers;
 var userArray = [];
 
-while (bombNumbers.length < 16) {
+while (bombNumbers.length < maxBombs) {
   if(!bombNumbers.includes(replyNum)) {
-    bombNumbers.push(replyNum)
+    bombNumbers.push(replyNum);
   }
 }
 
@@ -59,7 +60,7 @@ console.log(bombNumbers);
 
 var y = 0;
 
-while (!bombsCheck(bombNumbers, userNumbers) && y < attempts) {
+while (!bombsCheck(bombNumbers, userNumbers) && y < (maxRange - maxBombs)) {
   userNumbers = parseInt(prompt('Inserisci numero'));
 
   if (userNumberCheck(userNumbers, 1, maxRange)) {
