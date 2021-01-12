@@ -21,22 +21,27 @@ function bombsCheck(list, number) {
   return find;
 }
 
-
-var difficulty = prompt('Scegli la difficoltà:  1. Facile  2. Normale  3. Difficile');
-
+var dFlag = false;
+while (dFlag === false) {
+  var difficulty = prompt('Scegli la difficoltà:  1. Facile  2. Normale  3. Difficile');
   switch(difficulty) {
     case '1':
       var maxRange = 100;
+      dFlag = true;
       break;
     case '2':
       var maxRange = 80;
+      dFlag = true;
       break;
     case '3':
       var maxRange = 50;
+      dFlag = true;
       break;
     default:
       alert('Scegli la difficoltà inserendo esclusivamente 1, 2 o 3');
+      dFlag = false;
   }
+}
 
 var bombNumbers = [];
 var maxBombs = 16;
@@ -54,7 +59,7 @@ console.log(bombNumbers);
 
 var y = 0;
 
-while (!bombsCheck(bombNumbers, userNumbers) && y < (maxRange - maxBombs)) {
+while (!bombsCheck(bombNumbers, userNumbers) && userArray.length < (maxRange - maxBombs)) {
   userNumbers = parseInt(prompt('Inserisci numero'));
 
   if (userNumberCheck(userNumbers, 1, maxRange)) {
@@ -73,7 +78,6 @@ while (!bombsCheck(bombNumbers, userNumbers) && y < (maxRange - maxBombs)) {
       }
     }
   }
-  y++;
 }
 
-console.log('Il tuo punteggio è: ' + (userArray.length - 1));
+alert('Il tuo punteggio è: ' + (userArray.length - 1));
